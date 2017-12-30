@@ -1,4 +1,4 @@
-Stripe.setPublishableKey('pk_test_2v78ikYmFpVYuihYOox0mjKQ');
+Stripe.setPublishableKey('--------------paste ur public key');
 var $form = $('#checkout-form');
 $form.submit(function(event){
   $form.find('button').prop('disabled',true);
