@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-3 well">
+    <div class="card" style="width: 25rem;border-radius:5px;">
+      <img class="card-img-top" src="http://lorempixel.com/250/200/" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">My Profile</h4>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="fa fa-envelope" aria-hidden="true"></i> {{user.email}}</li>
+        <li class="list-group-item">Total Orders:{{orders.length}}</li>
+      
+      </ul>
+     
+    </div>
+  </div>
+ 
+
+ {{#if isOrder}}
+
+  <div class="col-md-8">
+   <div class="well">
+   
+    <h2>My Orders</h2>
+    {{#each orders}}
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <ul class="list-group">
+          {{#each this.items }}
+          <li class="list-group-item">
+            <span class="badge">{{this.price}}</span>
+            {{this.item.title}} | {{this.qty}} Units
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="panel-footer panel-primary"><strong>Total Price :${{this.cart.totalPrice}}</strong></div>
+    </div>
+
+
+    {{/each}}
+    </div>
+  </div>
+{{else}}
+<div class="col-md-8">
+      <h2>You did not give any order so far...!</h2>
+      <p>Do Want to give any order?? then give order here</p>
+      <a href="/" type="button" class="btn btn-success">View Items</a>
+    </div>
+
+{{/if}}
